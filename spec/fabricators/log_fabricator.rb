@@ -29,5 +29,6 @@ Fabricator(:user_get_friends_score_log, class_name: Log) do
 end
 
 Fabricator(:user_post_log, class_name: Log) do
+  method 'POST'
   path '/api/users/12'
 end

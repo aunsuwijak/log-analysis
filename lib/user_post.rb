@@ -3,9 +3,10 @@ require 'descriptive-statistics'
 class UserPost
 
   PATH_REGEX = /\A\/api\/users\/[^\/]*\z/i
+  HTTP_METHOD = 'POST'
 
   def analysis(logs)
-    logs = logs.select { |log| log.path.match(PATH_REGEX) }
+    logs = logs.select { |log| log.path.match(PATH_REGEX) && (log.method == HTTP_METHOD) }
     stats = DescriptiveStatistics::Stats.new(logs.map(&:response))
     dyno_mode = DescriptiveStatistics::Stats.new(logs.map(&:dyno)).mode
 
