@@ -4,6 +4,7 @@ require_relative 'lib/user_get_messages'
 require_relative 'lib/user_get_friends_progress'
 require_relative 'lib/user_get_friends_score'
 require_relative 'lib/user_post'
+require_relative 'lib/user_get'
 
 reader = FileReader.new
 data = reader.load('sample.log')
@@ -22,3 +23,6 @@ user_get_friends_score.analysis(data)
 
 user_post = UserPost.new
 user_post.analysis(data)
+
+user_get = UserGet.new
+user_get.analysis(data)
