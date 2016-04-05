@@ -4,3 +4,4 @@ ruby '2.3.0'
 
 gem 'rspec'
 gem 'fabrication'
+gem 'descriptive-statistics'
