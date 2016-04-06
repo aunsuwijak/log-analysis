@@ -19,3 +19,7 @@ end
 Fabricator(:user_get_messages_log, class_name: Log) do
   path '/api/users/12/get_messages'
 end
+
+Fabricator(:user_get_friends_progress_log, class_name: Log) do
+  path '/api/users/12/get_friends_progress'
+end
