@@ -2,6 +2,7 @@ require_relative 'lib/file_reader.rb'
 require_relative 'lib/user_counting_pending_messages'
 require_relative 'lib/user_get_messages'
 require_relative 'lib/user_get_friends_progress'
+require_relative 'lib/user_get_friends_score'
 
 reader = FileReader.new
 data = reader.load('sample.log')
@@ -14,3 +15,6 @@ user_get_message.analysis(data)
 
 user_get_friends_progress = UserGetFriendsProgress.new
 user_get_friends_progress.analysis(data)
+
+user_get_friends_score = UserGetFriendsScore.new
+user_get_friends_score.analysis(data)
