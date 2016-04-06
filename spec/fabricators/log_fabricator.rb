@@ -32,3 +32,8 @@ Fabricator(:user_post_log, class_name: Log) do
   method 'POST'
   path '/api/users/12'
 end
+
+Fabricator(:user_get_log, class_name: Log) do
+  method 'GET'
+  path '/api/users/12'
+end
