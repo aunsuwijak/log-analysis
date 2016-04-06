@@ -3,9 +3,10 @@ require 'descriptive-statistics'
 class UserGetFriendsScore
 
   PATH_REGEX = /\/api\/users\/(.*)\/get_friends_score/i
+  HTTP_METHOD = 'GET'
 
   def analysis(logs)
-    logs = logs.select { |log| log.path.match(PATH_REGEX) }
+    logs = logs.select { |log| log.path.match(PATH_REGEX) && (log.method == HTTP_METHOD) }
     stats = DescriptiveStatistics::Stats.new(logs.map(&:response))
     dyno_mode = DescriptiveStatistics::Stats.new(logs.map(&:dyno)).mode
 

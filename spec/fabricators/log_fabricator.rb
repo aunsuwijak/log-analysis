@@ -13,18 +13,22 @@ Fabricator(:log, class_name: Log) do
 end
 
 Fabricator(:user_counting_pending_messages_log, class_name: Log) do
+  method 'GET'
   path '/api/users/12/count_pending_messages'
 end
 
 Fabricator(:user_get_messages_log, class_name: Log) do
+  method 'GET'
   path '/api/users/12/get_messages'
 end
 
 Fabricator(:user_get_friends_progress_log, class_name: Log) do
+  method 'GET'
   path '/api/users/12/get_friends_progress'
 end
 
 Fabricator(:user_get_friends_score_log, class_name: Log) do
+  method 'GET'
   path '/api/users/12/get_friends_score'
 end
 
